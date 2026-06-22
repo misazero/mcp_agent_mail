@@ -1,11 +1,12 @@
 services:
   agent-mail:
     build: .
-    ports:
-      - "8765:8765"
     environment:
       HTTP_HOST: "0.0.0.0"
-      STORAGE_ROOT: /data/archive
+      STORAGE_ROOT: "/data/mailbox"
+      LOG_RICH_ENABLED: "true"
+    ports:
+      - "8765:8765"
     volumes:
       - agent_mail_data:/data
 volumes:
