@@ -1,0 +1,12 @@
+services:
+  agent-mail:
+    build: .
+    expose:
+      - "8765"
+    environment:
+      HTTP_HOST: "0.0.0.0"
+      STORAGE_ROOT: /data/archive
+    volumes:
+      - agent_mail_data:/data
+volumes:
+  agent_mail_data:
